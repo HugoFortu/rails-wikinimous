@@ -1,0 +1,13 @@
+<h1>My articles</h1>
+<ul>
+  <% @articles.each do |article| %>
+
+  <li>
+    <%= link_to article['title'], article_path(article['id']) %>
+  </li>
+  <%= link_to 'Destroy', article_path(article['id']),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %>
+  <% end %>
+</ul>
+
+<a href="http://localhost:3000/articles/new"> Add a new article</a>
